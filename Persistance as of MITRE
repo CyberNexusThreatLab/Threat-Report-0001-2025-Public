@@ -1,0 +1,44 @@
+### 🔐 What is **Persistence** in MITRE ATT\&CK?
+
+**Persistence** is a **tactic** in the MITRE ATT\&CK framework. It refers to techniques that **adversaries use to maintain their foothold** on systems across reboots, credential changes, or other interruptions that could cut off their access.
+
+---
+
+### 📌 Key Points About Persistence:
+
+* Persistence ensures **long-term access** to a compromised system.
+* Techniques may involve creating **scheduled tasks**, adding **registry keys**, installing **backdoors**, or modifying **boot processes**.
+* Attackers often combine persistence with **privilege escalation** and **defense evasion**.
+
+---
+
+### 🧰 Common MITRE Techniques for Persistence:
+
+Here are some notable **sub-techniques** under the **Persistence (T1547, T1053, etc.)** category:
+
+| Technique ID | Name                                  | Description                                                                                            |
+| ------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| T1547        | **Boot or Logon Autostart Execution** | Modify system files or autostart locations (like Registry, Startup folder) to execute malware on boot. |
+| T1053        | **Scheduled Task/Job**                | Create cron jobs (Linux/macOS) or scheduled tasks (Windows) to maintain access.                        |
+| T1037        | **Logon Scripts**                     | Modify logon scripts so malware runs when users log in.                                                |
+| T1574        | **Hijack Execution Flow**             | DLL search order hijacking, COM hijacking, etc., to execute malicious code during normal operations.   |
+| T1136        | **Create Account**                    | Add new user accounts for future access.                                                               |
+| T1543        | **Create or Modify System Process**   | Install services that persist across reboots.                                                          |
+| T1505        | **Server Software Component**         | Modify web server components like modules or handlers.                                                 |
+
+---
+
+### 🔍 Examples in Real Attacks:
+
+* **APT29 (Cozy Bear)** used **DLL side-loading** to maintain persistence.
+* **FIN7** used **registry run keys** to launch their backdoor at logon.
+* **Lazarus Group** deployed **bootkits** to survive OS reinstalls.
+
+---
+
+### 🛡️ Defense Strategies:
+
+* Monitor autostart locations, new services, and unusual scheduled tasks.
+* Use **Endpoint Detection & Response (EDR)** tools to detect suspicious behavior.
+* Limit **admin rights** and use **application whitelisting**.
+
