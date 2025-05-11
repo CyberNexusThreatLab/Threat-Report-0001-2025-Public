@@ -1,4 +1,4 @@
-# Threat-Report-Finding-Initial-Access-CyberABCLab-Incident
+# Threat-Report-Finding-Initial-Access
 
 **Source: CyberNexus Threat Lab**
 
